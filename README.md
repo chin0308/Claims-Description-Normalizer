@@ -29,8 +29,8 @@ Raw Claim Text
     ┌────┴─────────────────────┐
     ▼                          ▼
 ┌──────────────┐     ┌──────────────────┐
-│  Rule-Based  │     │  LLM Extraction  │  Claude API (claude-sonnet)
-│  Extraction  │     │  (Anthropic)     │
+│  Rule-Based  │     │  LLM Extraction  │  Gemini API
+│  Extraction  │     │  (Gemini)     │
 └──────┬───────┘     └────────┬─────────┘
        │                      │
        └──────────┬───────────┘
@@ -61,7 +61,7 @@ claims-normalizer/
 ├── pipeline/
 │   ├── preprocess.py        # Text cleaning and normalization
 │   ├── rules.py             # Regex/keyword-based extraction
-│   ├── llm.py               # Claude API extraction
+│   ├── llm.py               # Gemini API extraction
 │   ├── combine.py           # Merge rule + LLM outputs
 │   └── validate.py          # Schema enforcement and correction
 ├── api/
@@ -90,7 +90,7 @@ pip install -r requirements.txt
 
 ### 2. Set your Anthropic API key
 ```bash
-export ANTHROPIC_API_KEY="your-key-here"
+export GEMINI_API_KEY="your-key-here"
 ```
 
 ### 3. Run the demo
