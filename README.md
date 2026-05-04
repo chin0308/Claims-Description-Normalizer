@@ -1,6 +1,6 @@
 # 🛡️ Claims Description Normalizer
 
-A **production-grade GenAI pipeline** that converts messy, unstructured insurance claim descriptions into clean, structured JSON using a **hybrid rule-based + LLM extraction** approach.
+A **GenAI pipeline** that converts messy, unstructured insurance claim descriptions into clean, structured JSON using a **hybrid rule-based + LLM extraction** approach.
 
 ---
 
