@@ -1,0 +1,876 @@
+2026-04-29 23:52:14 | INFO     | __main__ | Pipeline started for input: 'car hit from behind, bumper broken, repair maybe 30k, happened last night'
+2026-04-29 23:52:14 | DEBUG    | pipeline.preprocess | Preprocessed: 'car hit from behind, bumper broken, repair maybe 30k, happened last night' → 'car hit from behind, bumper broken, repair maybe 30000, happened last night'
+2026-04-29 23:52:14 | INFO     | __main__ | After preprocessing: 'car hit from behind, bumper broken, repair maybe 30000, happened last night'
+2026-04-29 23:52:14 | DEBUG    | pipeline.rules | Rule matched loss_type='collision'
+2026-04-29 23:52:14 | DEBUG    | pipeline.rules | Rule extracted cost=30000.0
+2026-04-29 23:52:14 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': None, 'summary': None}
+2026-04-29 23:52:14 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-29 23:52:15 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-04-29 23:52:15 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-29 23:52:15 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-29 23:52:15 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-29 23:52:15 | INFO     | pipeline.combine | Combined result: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': None, 'summary': None}
+2026-04-29 23:52:15 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-29 23:52:15 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-29 23:52:15 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:52:15 | INFO     | __main__ | Pipeline completed in 0.414s. Output: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:52:15 | INFO     | __main__ | Pipeline started for input: 'bike stolen from parking lot yesterday evening'
+2026-04-29 23:52:15 | DEBUG    | pipeline.preprocess | Preprocessed: 'bike stolen from parking lot yesterday evening' → 'bike stolen from parking lot yesterday evening'
+2026-04-29 23:52:15 | INFO     | __main__ | After preprocessing: 'bike stolen from parking lot yesterday evening'
+2026-04-29 23:52:15 | DEBUG    | pipeline.rules | Rule matched loss_type='theft'
+2026-04-29 23:52:15 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'theft', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-29 23:52:15 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-29 23:52:15 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-04-29 23:52:15 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-29 23:52:15 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-29 23:52:15 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-29 23:52:15 | INFO     | pipeline.combine | Combined result: {'loss_type': 'theft', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-29 23:52:15 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-29 23:52:15 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-29 23:52:15 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'theft', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:52:15 | INFO     | __main__ | Pipeline completed in 0.266s. Output: {'loss_type': 'theft', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:52:15 | INFO     | __main__ | Pipeline started for input: 'engine seized on highway, towed to workshop, total repair cost around 85000'
+2026-04-29 23:52:15 | DEBUG    | pipeline.preprocess | Preprocessed: 'engine seized on highway, towed to workshop, total repair cost around 85000' → 'engine seized on highway, towed to workshop, total repair cost around 85000'
+2026-04-29 23:52:15 | INFO     | __main__ | After preprocessing: 'engine seized on highway, towed to workshop, total repair cost around 85000'
+2026-04-29 23:52:15 | DEBUG    | pipeline.rules | Rule matched loss_type='mechanical'
+2026-04-29 23:52:15 | DEBUG    | pipeline.rules | Rule extracted cost=85000.0
+2026-04-29 23:52:15 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': None, 'summary': None}
+2026-04-29 23:52:15 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-29 23:52:15 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-04-29 23:52:15 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-29 23:52:15 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-29 23:52:15 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-29 23:52:15 | INFO     | pipeline.combine | Combined result: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': None, 'summary': None}
+2026-04-29 23:52:15 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-29 23:52:15 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-29 23:52:15 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:52:15 | INFO     | __main__ | Pipeline completed in 0.315s. Output: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:52:15 | INFO     | __main__ | Pipeline started for input: 'flood damaged car, water entered cabin, seats destroyed'
+2026-04-29 23:52:15 | DEBUG    | pipeline.preprocess | Preprocessed: 'flood damaged car, water entered cabin, seats destroyed' → 'flood damaged car, water entered cabin, seats destroyed'
+2026-04-29 23:52:15 | INFO     | __main__ | After preprocessing: 'flood damaged car, water entered cabin, seats destroyed'
+2026-04-29 23:52:15 | DEBUG    | pipeline.rules | Rule matched loss_type='flood'
+2026-04-29 23:52:15 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'flood', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-29 23:52:15 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-29 23:52:15 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-04-29 23:52:15 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-29 23:52:15 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-29 23:52:15 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-29 23:52:15 | INFO     | pipeline.combine | Combined result: {'loss_type': 'flood', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-29 23:52:15 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-29 23:52:15 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-29 23:52:15 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'flood', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:52:16 | INFO     | __main__ | Pipeline completed in 0.281s. Output: {'loss_type': 'flood', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:52:16 | INFO     | __main__ | Pipeline started for input: 'minor dent on front door, just cosmetic, maybe 3000 to fix'
+2026-04-29 23:52:16 | DEBUG    | pipeline.preprocess | Preprocessed: 'minor dent on front door, just cosmetic, maybe 3000 to fix' → 'minor dent on front door, just cosmetic, maybe 3000 to fix'
+2026-04-29 23:52:16 | INFO     | __main__ | After preprocessing: 'minor dent on front door, just cosmetic, maybe 3000 to fix'
+2026-04-29 23:52:16 | DEBUG    | pipeline.rules | Rule extracted cost=3000.0
+2026-04-29 23:52:16 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': None, 'estimated_cost': 3000.0, 'severity': 'low', 'summary': None}
+2026-04-29 23:52:16 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-29 23:52:16 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-04-29 23:52:16 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: llm
+2026-04-29 23:52:16 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-29 23:52:16 | DEBUG    | pipeline.combine | Field 'severity' sourced from: rules
+2026-04-29 23:52:16 | INFO     | pipeline.combine | Combined result: {'loss_type': None, 'estimated_cost': 3000.0, 'severity': 'low', 'summary': None}
+2026-04-29 23:52:16 | WARNING  | pipeline.validate | Invalid loss_type '' → defaulting to 'unknown'
+2026-04-29 23:52:16 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-29 23:52:16 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'unknown', 'estimated_cost': 3000.0, 'severity': 'low', 'summary': 'No summary available.'}
+2026-04-29 23:52:16 | INFO     | __main__ | Pipeline completed in 0.283s. Output: {'loss_type': 'unknown', 'estimated_cost': 3000.0, 'severity': 'low', 'summary': 'No summary available.'}
+2026-04-29 23:52:16 | INFO     | __main__ | Pipeline started for input: 'house fire started in kitchen, spread to two rooms, total loss'
+2026-04-29 23:52:16 | DEBUG    | pipeline.preprocess | Preprocessed: 'house fire started in kitchen, spread to two rooms, total loss' → 'house fire started in kitchen, spread to two rooms, total loss'
+2026-04-29 23:52:16 | INFO     | __main__ | After preprocessing: 'house fire started in kitchen, spread to two rooms, total loss'
+2026-04-29 23:52:16 | DEBUG    | pipeline.rules | Rule matched loss_type='fire'
+2026-04-29 23:52:16 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'fire', 'estimated_cost': None, 'severity': 'high', 'summary': None}
+2026-04-29 23:52:16 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-29 23:52:16 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-04-29 23:52:16 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-29 23:52:16 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-29 23:52:16 | DEBUG    | pipeline.combine | Field 'severity' sourced from: rules
+2026-04-29 23:52:16 | INFO     | pipeline.combine | Combined result: {'loss_type': 'fire', 'estimated_cost': None, 'severity': 'high', 'summary': None}
+2026-04-29 23:52:16 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-29 23:52:16 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'fire', 'estimated_cost': None, 'severity': 'high', 'summary': 'No summary available.'}
+2026-04-29 23:52:16 | INFO     | __main__ | Pipeline completed in 0.464s. Output: {'loss_type': 'fire', 'estimated_cost': None, 'severity': 'high', 'summary': 'No summary available.'}
+2026-04-29 23:58:20 | INFO     | __main__ | Pipeline started for input: 'car hit from behind, bumper broken, repair maybe 30k, happened last night'
+2026-04-29 23:58:20 | DEBUG    | pipeline.preprocess | Preprocessed: 'car hit from behind, bumper broken, repair maybe 30k, happened last night' → 'car hit from behind, bumper broken, repair maybe 30000, happened last night'
+2026-04-29 23:58:20 | DEBUG    | pipeline.rules | Rule matched loss_type='collision'
+2026-04-29 23:58:20 | DEBUG    | pipeline.rules | Rule extracted cost=30000.0
+2026-04-29 23:58:20 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': None, 'summary': None}
+2026-04-29 23:58:21 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-29 23:58:21 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-29 23:58:21 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-29 23:58:21 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019E442DFB60>
+2026-04-29 23:58:21 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000019E441A5BE0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-29 23:58:21 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019E44235F90>
+2026-04-29 23:58:21 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-29 23:58:21 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-29 23:58:21 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-29 23:58:21 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-29 23:58:21 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-29 23:58:21 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Wed, 29 Apr 2026 18:28:21 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=85'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-29 23:58:21 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-29 23:58:21 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-29 23:58:21 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-29 23:58:21 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-29 23:58:21 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-29 23:58:21 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 38.43201563s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '38s'}]}}
+2026-04-29 23:58:21 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-29 23:58:21 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-29 23:58:21 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-29 23:58:21 | INFO     | pipeline.combine | Combined result: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': None, 'summary': None}
+2026-04-29 23:58:21 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-29 23:58:21 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-29 23:58:21 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:58:21 | INFO     | __main__ | Pipeline completed in 1.155s. Output: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:58:21 | INFO     | __main__ | Pipeline started for input: 'bike stolen from parking lot yesterday evening'
+2026-04-29 23:58:21 | DEBUG    | pipeline.preprocess | Preprocessed: 'bike stolen from parking lot yesterday evening' → 'bike stolen from parking lot yesterday evening'
+2026-04-29 23:58:21 | DEBUG    | pipeline.rules | Rule matched loss_type='theft'
+2026-04-29 23:58:21 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'theft', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-29 23:58:22 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-29 23:58:22 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-29 23:58:22 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-29 23:58:22 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019E44322990>
+2026-04-29 23:58:22 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000019E442F8DD0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-29 23:58:22 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019E442B1CD0>
+2026-04-29 23:58:22 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-29 23:58:22 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-29 23:58:22 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-29 23:58:22 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-29 23:58:22 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-29 23:58:22 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Wed, 29 Apr 2026 18:28:22 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=89'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-29 23:58:22 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-29 23:58:22 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-29 23:58:22 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-29 23:58:22 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-29 23:58:22 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-29 23:58:22 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 37.12876135s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '37s'}]}}
+2026-04-29 23:58:22 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-29 23:58:22 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-29 23:58:22 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-29 23:58:22 | INFO     | pipeline.combine | Combined result: {'loss_type': 'theft', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-29 23:58:22 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-29 23:58:22 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-29 23:58:22 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'theft', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:58:22 | INFO     | __main__ | Pipeline completed in 1.313s. Output: {'loss_type': 'theft', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:58:22 | INFO     | __main__ | Pipeline started for input: 'engine seized on highway, towed to workshop, total repair cost around 85000'
+2026-04-29 23:58:22 | DEBUG    | pipeline.preprocess | Preprocessed: 'engine seized on highway, towed to workshop, total repair cost around 85000' → 'engine seized on highway, towed to workshop, total repair cost around 85000'
+2026-04-29 23:58:22 | DEBUG    | pipeline.rules | Rule matched loss_type='mechanical'
+2026-04-29 23:58:22 | DEBUG    | pipeline.rules | Rule extracted cost=85000.0
+2026-04-29 23:58:22 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': None, 'summary': None}
+2026-04-29 23:58:23 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-29 23:58:23 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-29 23:58:23 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-29 23:58:23 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019E442B2780>
+2026-04-29 23:58:23 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000019E442F9010> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-29 23:58:23 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019E44325130>
+2026-04-29 23:58:23 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-29 23:58:23 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-29 23:58:23 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-29 23:58:23 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-29 23:58:23 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-29 23:58:24 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Wed, 29 Apr 2026 18:28:23 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=255'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-29 23:58:24 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-29 23:58:24 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-29 23:58:24 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-29 23:58:24 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-29 23:58:24 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-29 23:58:24 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 36.020061347s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '36s'}]}}
+2026-04-29 23:58:24 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-29 23:58:24 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-29 23:58:24 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-29 23:58:24 | INFO     | pipeline.combine | Combined result: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': None, 'summary': None}
+2026-04-29 23:58:24 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-29 23:58:24 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-29 23:58:24 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:58:24 | INFO     | __main__ | Pipeline completed in 1.219s. Output: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:58:24 | INFO     | __main__ | Pipeline started for input: 'flood damaged car, water entered cabin, seats destroyed'
+2026-04-29 23:58:24 | DEBUG    | pipeline.preprocess | Preprocessed: 'flood damaged car, water entered cabin, seats destroyed' → 'flood damaged car, water entered cabin, seats destroyed'
+2026-04-29 23:58:24 | DEBUG    | pipeline.rules | Rule matched loss_type='flood'
+2026-04-29 23:58:24 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'flood', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-29 23:58:24 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-29 23:58:24 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-29 23:58:24 | DEBUG    | httpcore.connection | close.started
+2026-04-29 23:58:24 | DEBUG    | httpcore.connection | close.complete
+2026-04-29 23:58:24 | DEBUG    | httpcore.connection | close.started
+2026-04-29 23:58:24 | DEBUG    | httpcore.connection | close.complete
+2026-04-29 23:58:24 | DEBUG    | httpcore.connection | close.started
+2026-04-29 23:58:24 | DEBUG    | httpcore.connection | close.complete
+2026-04-29 23:58:24 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-29 23:58:24 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019E4429A580>
+2026-04-29 23:58:24 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000019E442F92E0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-29 23:58:24 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019E4429A7A0>
+2026-04-29 23:58:24 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-29 23:58:24 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-29 23:58:24 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-29 23:58:24 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-29 23:58:24 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Wed, 29 Apr 2026 18:28:25 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=238'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-29 23:58:25 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-29 23:58:25 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 34.939930452s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '34s'}]}}
+2026-04-29 23:58:25 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-29 23:58:25 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-29 23:58:25 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-29 23:58:25 | INFO     | pipeline.combine | Combined result: {'loss_type': 'flood', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-29 23:58:25 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-29 23:58:25 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-29 23:58:25 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'flood', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:58:25 | INFO     | __main__ | Pipeline completed in 1.025s. Output: {'loss_type': 'flood', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-29 23:58:25 | INFO     | __main__ | Pipeline started for input: 'minor dent on front door, just cosmetic, maybe 3000 to fix'
+2026-04-29 23:58:25 | DEBUG    | pipeline.preprocess | Preprocessed: 'minor dent on front door, just cosmetic, maybe 3000 to fix' → 'minor dent on front door, just cosmetic, maybe 3000 to fix'
+2026-04-29 23:58:25 | DEBUG    | pipeline.rules | Rule extracted cost=3000.0
+2026-04-29 23:58:25 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': None, 'estimated_cost': 3000.0, 'severity': 'low', 'summary': None}
+2026-04-29 23:58:25 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-29 23:58:25 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-29 23:58:25 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-29 23:58:25 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019E442EDB50>
+2026-04-29 23:58:25 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000019E442F9130> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-29 23:58:25 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019E442EDE50>
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Wed, 29 Apr 2026 18:28:25 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=88'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-29 23:58:25 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-29 23:58:25 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-29 23:58:25 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 34.069944089s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '34s'}]}}
+2026-04-29 23:58:25 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: llm
+2026-04-29 23:58:25 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-29 23:58:25 | DEBUG    | pipeline.combine | Field 'severity' sourced from: rules
+2026-04-29 23:58:25 | INFO     | pipeline.combine | Combined result: {'loss_type': None, 'estimated_cost': 3000.0, 'severity': 'low', 'summary': None}
+2026-04-29 23:58:25 | WARNING  | pipeline.validate | Invalid loss_type '' → defaulting to 'unknown'
+2026-04-29 23:58:25 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-29 23:58:25 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'unknown', 'estimated_cost': 3000.0, 'severity': 'low', 'summary': 'No summary available.'}
+2026-04-29 23:58:25 | INFO     | __main__ | Pipeline completed in 0.804s. Output: {'loss_type': 'unknown', 'estimated_cost': 3000.0, 'severity': 'low', 'summary': 'No summary available.'}
+2026-04-29 23:58:25 | INFO     | __main__ | Pipeline started for input: 'house fire started in kitchen, spread to two rooms, total loss'
+2026-04-29 23:58:25 | DEBUG    | pipeline.preprocess | Preprocessed: 'house fire started in kitchen, spread to two rooms, total loss' → 'house fire started in kitchen, spread to two rooms, total loss'
+2026-04-29 23:58:25 | DEBUG    | pipeline.rules | Rule matched loss_type='fire'
+2026-04-29 23:58:25 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'fire', 'estimated_cost': None, 'severity': 'high', 'summary': None}
+2026-04-29 23:58:26 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-29 23:58:26 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-29 23:58:26 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-29 23:58:26 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019E44309220>
+2026-04-29 23:58:26 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000019E442F9010> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-29 23:58:26 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019E443099A0>
+2026-04-29 23:58:26 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-29 23:58:26 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-29 23:58:26 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-29 23:58:26 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-29 23:58:26 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-29 23:58:26 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Wed, 29 Apr 2026 18:28:26 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=72'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-29 23:58:26 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-29 23:58:26 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-29 23:58:26 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-29 23:58:26 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-29 23:58:26 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-29 23:58:26 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 33.279937762s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '33s'}]}}
+2026-04-29 23:58:26 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-29 23:58:26 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-29 23:58:26 | DEBUG    | pipeline.combine | Field 'severity' sourced from: rules
+2026-04-29 23:58:26 | INFO     | pipeline.combine | Combined result: {'loss_type': 'fire', 'estimated_cost': None, 'severity': 'high', 'summary': None}
+2026-04-29 23:58:26 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-29 23:58:26 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'fire', 'estimated_cost': None, 'severity': 'high', 'summary': 'No summary available.'}
+2026-04-29 23:58:26 | INFO     | __main__ | Pipeline completed in 0.788s. Output: {'loss_type': 'fire', 'estimated_cost': None, 'severity': 'high', 'summary': 'No summary available.'}
+2026-04-29 23:58:26 | DEBUG    | httpcore.connection | close.started
+2026-04-29 23:58:26 | DEBUG    | httpcore.connection | close.complete
+2026-04-29 23:58:26 | DEBUG    | httpcore.connection | close.started
+2026-04-29 23:58:26 | DEBUG    | httpcore.connection | close.complete
+2026-04-29 23:58:26 | DEBUG    | httpcore.connection | close.started
+2026-04-29 23:58:26 | DEBUG    | httpcore.connection | close.complete
+2026-04-30 01:39:08 | INFO     | __main__ | Pipeline started for input: 'car hit from behind, bumper broken, repair maybe 30k, happened last night'
+2026-04-30 01:39:08 | DEBUG    | pipeline.preprocess | Preprocessed: 'car hit from behind, bumper broken, repair maybe 30k, happened last night' → 'car hit from behind, bumper broken, repair maybe 30000, happened last night'
+2026-04-30 01:39:08 | DEBUG    | pipeline.rules | Rule matched loss_type='collision'
+2026-04-30 01:39:08 | DEBUG    | pipeline.rules | Rule extracted cost=30000.0
+2026-04-30 01:39:08 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': None, 'summary': None}
+2026-04-30 01:39:09 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 01:39:09 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 01:39:09 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 01:39:09 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000014AA7B36CF0>
+2026-04-30 01:39:09 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000014AA79D59A0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 01:39:09 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000014AA7A7CCD0>
+2026-04-30 01:39:09 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 01:39:09 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 01:39:09 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 01:39:09 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 01:39:09 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 01:39:09 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Wed, 29 Apr 2026 20:09:09 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=250'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 01:39:09 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 01:39:09 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 01:39:09 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 01:39:09 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 01:39:09 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 01:39:09 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 50.20092378s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '50s'}]}}
+2026-04-30 01:39:09 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 01:39:09 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-30 01:39:09 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-30 01:39:09 | INFO     | pipeline.combine | Combined result: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': None, 'summary': None}
+2026-04-30 01:39:09 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-30 01:39:09 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 01:39:09 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 01:39:09 | INFO     | __main__ | Pipeline completed in 1.41s. Output: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 01:39:09 | INFO     | __main__ | Pipeline started for input: 'bike stolen from parking lot yesterday evening'
+2026-04-30 01:39:09 | DEBUG    | pipeline.preprocess | Preprocessed: 'bike stolen from parking lot yesterday evening' → 'bike stolen from parking lot yesterday evening'
+2026-04-30 01:39:09 | DEBUG    | pipeline.rules | Rule matched loss_type='theft'
+2026-04-30 01:39:09 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'theft', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-30 01:39:10 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 01:39:10 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 01:39:10 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 01:39:10 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000014AA7B416D0>
+2026-04-30 01:39:10 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000014AA7B28B90> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 01:39:10 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000014AA7ADD810>
+2026-04-30 01:39:10 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 01:39:10 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 01:39:10 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 01:39:10 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 01:39:10 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 01:39:11 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Wed, 29 Apr 2026 20:09:11 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=239'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 01:39:11 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 01:39:11 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 01:39:11 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 01:39:11 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 01:39:11 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 01:39:11 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 48.831473308s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '48s'}]}}
+2026-04-30 01:39:11 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 01:39:11 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-30 01:39:11 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-30 01:39:11 | INFO     | pipeline.combine | Combined result: {'loss_type': 'theft', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-30 01:39:11 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-30 01:39:11 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 01:39:11 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'theft', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 01:39:11 | INFO     | __main__ | Pipeline completed in 1.357s. Output: {'loss_type': 'theft', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 01:39:11 | INFO     | __main__ | Pipeline started for input: 'engine seized on highway, towed to workshop, total repair cost around 85000'
+2026-04-30 01:39:11 | DEBUG    | pipeline.preprocess | Preprocessed: 'engine seized on highway, towed to workshop, total repair cost around 85000' → 'engine seized on highway, towed to workshop, total repair cost around 85000'
+2026-04-30 01:39:11 | DEBUG    | pipeline.rules | Rule matched loss_type='mechanical'
+2026-04-30 01:39:11 | DEBUG    | pipeline.rules | Rule extracted cost=85000.0
+2026-04-30 01:39:11 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': None, 'summary': None}
+2026-04-30 01:39:11 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 01:39:11 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 01:39:11 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 01:39:11 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000014AA7ADE2C0>
+2026-04-30 01:39:11 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000014AA7B28DD0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 01:39:11 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000014AA7B16570>
+2026-04-30 01:39:11 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 01:39:11 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 01:39:11 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 01:39:11 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 01:39:11 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Wed, 29 Apr 2026 20:09:12 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=256'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 01:39:12 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 01:39:12 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 47.825261281s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '47s'}]}}
+2026-04-30 01:39:12 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 01:39:12 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-30 01:39:12 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-30 01:39:12 | INFO     | pipeline.combine | Combined result: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': None, 'summary': None}
+2026-04-30 01:39:12 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-30 01:39:12 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 01:39:12 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 01:39:12 | INFO     | __main__ | Pipeline completed in 1.078s. Output: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 01:39:12 | INFO     | __main__ | Pipeline started for input: 'flood damaged car, water entered cabin, seats destroyed'
+2026-04-30 01:39:12 | DEBUG    | pipeline.preprocess | Preprocessed: 'flood damaged car, water entered cabin, seats destroyed' → 'flood damaged car, water entered cabin, seats destroyed'
+2026-04-30 01:39:12 | DEBUG    | pipeline.rules | Rule matched loss_type='flood'
+2026-04-30 01:39:12 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'flood', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-30 01:39:12 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 01:39:12 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 01:39:12 | DEBUG    | httpcore.connection | close.started
+2026-04-30 01:39:12 | DEBUG    | httpcore.connection | close.complete
+2026-04-30 01:39:12 | DEBUG    | httpcore.connection | close.started
+2026-04-30 01:39:12 | DEBUG    | httpcore.connection | close.complete
+2026-04-30 01:39:12 | DEBUG    | httpcore.connection | close.started
+2026-04-30 01:39:12 | DEBUG    | httpcore.connection | close.complete
+2026-04-30 01:39:12 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 01:39:12 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000014AA7AAE580>
+2026-04-30 01:39:12 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000014AA7B290A0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 01:39:12 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000014AA7AAE7A0>
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Wed, 29 Apr 2026 20:09:13 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=84'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 01:39:12 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 01:39:12 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 01:39:12 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 46.988644613s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '46s'}]}}
+2026-04-30 01:39:12 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 01:39:12 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-30 01:39:12 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-30 01:39:12 | INFO     | pipeline.combine | Combined result: {'loss_type': 'flood', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-30 01:39:12 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-30 01:39:12 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 01:39:12 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'flood', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 01:39:12 | INFO     | __main__ | Pipeline completed in 0.762s. Output: {'loss_type': 'flood', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 01:39:12 | INFO     | __main__ | Pipeline started for input: 'minor dent on front door, just cosmetic, maybe 3000 to fix'
+2026-04-30 01:39:12 | DEBUG    | pipeline.preprocess | Preprocessed: 'minor dent on front door, just cosmetic, maybe 3000 to fix' → 'minor dent on front door, just cosmetic, maybe 3000 to fix'
+2026-04-30 01:39:12 | DEBUG    | pipeline.rules | Rule extracted cost=3000.0
+2026-04-30 01:39:12 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': None, 'estimated_cost': 3000.0, 'severity': 'low', 'summary': None}
+2026-04-30 01:39:13 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 01:39:13 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 01:39:13 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 01:39:13 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000014AA7ADB450>
+2026-04-30 01:39:13 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000014AA7B28EF0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 01:39:13 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000014AA7ADB750>
+2026-04-30 01:39:13 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 01:39:13 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 01:39:13 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 01:39:13 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 01:39:13 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 01:39:13 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Wed, 29 Apr 2026 20:09:13 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=72'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 01:39:13 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 01:39:13 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 01:39:13 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 01:39:13 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 01:39:13 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 01:39:13 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 46.209160296s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '46s'}]}}
+2026-04-30 01:39:13 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: llm
+2026-04-30 01:39:13 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-30 01:39:13 | DEBUG    | pipeline.combine | Field 'severity' sourced from: rules
+2026-04-30 01:39:13 | INFO     | pipeline.combine | Combined result: {'loss_type': None, 'estimated_cost': 3000.0, 'severity': 'low', 'summary': None}
+2026-04-30 01:39:13 | WARNING  | pipeline.validate | Invalid loss_type '' → defaulting to 'unknown'
+2026-04-30 01:39:13 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 01:39:13 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'unknown', 'estimated_cost': 3000.0, 'severity': 'low', 'summary': 'No summary available.'}
+2026-04-30 01:39:13 | INFO     | __main__ | Pipeline completed in 0.779s. Output: {'loss_type': 'unknown', 'estimated_cost': 3000.0, 'severity': 'low', 'summary': 'No summary available.'}
+2026-04-30 01:39:13 | INFO     | __main__ | Pipeline started for input: 'house fire started in kitchen, spread to two rooms, total loss'
+2026-04-30 01:39:13 | DEBUG    | pipeline.preprocess | Preprocessed: 'house fire started in kitchen, spread to two rooms, total loss' → 'house fire started in kitchen, spread to two rooms, total loss'
+2026-04-30 01:39:13 | DEBUG    | pipeline.rules | Rule matched loss_type='fire'
+2026-04-30 01:39:13 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'fire', 'estimated_cost': None, 'severity': 'high', 'summary': None}
+2026-04-30 01:39:14 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 01:39:14 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 01:39:14 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 01:39:14 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000014AA7A5BF20>
+2026-04-30 01:39:14 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000014AA7B28830> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 01:39:14 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000014AA7A5BD40>
+2026-04-30 01:39:14 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 01:39:14 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 01:39:14 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 01:39:14 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 01:39:14 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 01:39:14 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Wed, 29 Apr 2026 20:09:14 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=78'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 01:39:14 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 01:39:14 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 01:39:14 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 01:39:14 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 01:39:14 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 01:39:14 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 45.348830338s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '45s'}]}}
+2026-04-30 01:39:14 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 01:39:14 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-30 01:39:14 | DEBUG    | pipeline.combine | Field 'severity' sourced from: rules
+2026-04-30 01:39:14 | INFO     | pipeline.combine | Combined result: {'loss_type': 'fire', 'estimated_cost': None, 'severity': 'high', 'summary': None}
+2026-04-30 01:39:14 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 01:39:14 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'fire', 'estimated_cost': None, 'severity': 'high', 'summary': 'No summary available.'}
+2026-04-30 01:39:14 | INFO     | __main__ | Pipeline completed in 0.876s. Output: {'loss_type': 'fire', 'estimated_cost': None, 'severity': 'high', 'summary': 'No summary available.'}
+2026-04-30 01:39:14 | DEBUG    | httpcore.connection | close.started
+2026-04-30 01:39:14 | DEBUG    | httpcore.connection | close.complete
+2026-04-30 01:39:14 | DEBUG    | httpcore.connection | close.started
+2026-04-30 01:39:14 | DEBUG    | httpcore.connection | close.complete
+2026-04-30 01:39:14 | DEBUG    | httpcore.connection | close.started
+2026-04-30 01:39:14 | DEBUG    | httpcore.connection | close.complete
+2026-04-30 16:59:09 | INFO     | api.app | POST /process_claim — 'car hit from behind, crash, bumper broken, happened in afternoon yesterday, repair cost maybe upto 50k'
+2026-04-30 16:59:09 | INFO     | main | Pipeline started for input: 'car hit from behind, crash, bumper broken, happened in afternoon yesterday, repair cost maybe upto 50k'
+2026-04-30 16:59:09 | DEBUG    | pipeline.preprocess | Preprocessed: 'car hit from behind, crash, bumper broken, happened in afternoon yesterday, repair cost maybe upto 50k' → 'car hit from behind, crash, bumper broken, happened in afternoon yesterday, repair cost maybe upto 50000'
+2026-04-30 16:59:09 | DEBUG    | pipeline.rules | Rule matched loss_type='collision'
+2026-04-30 16:59:09 | DEBUG    | pipeline.rules | Rule extracted cost=50000.0
+2026-04-30 16:59:09 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'collision', 'estimated_cost': 50000.0, 'severity': None, 'summary': None}
+2026-04-30 16:59:11 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 16:59:11 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 16:59:11 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 16:59:12 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B070F9940>
+2026-04-30 16:59:12 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025B06E8D910> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 16:59:12 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B070F4410>
+2026-04-30 16:59:12 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 16:59:12 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 16:59:12 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 16:59:12 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 16:59:12 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 16:59:12 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Thu, 30 Apr 2026 11:29:13 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=248'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 16:59:12 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 16:59:12 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 16:59:12 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 16:59:12 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 16:59:12 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 16:59:12 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 46.688117891s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '46s'}]}}
+2026-04-30 16:59:12 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 16:59:12 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-30 16:59:12 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-30 16:59:12 | INFO     | pipeline.combine | Combined result: {'loss_type': 'collision', 'estimated_cost': 50000.0, 'severity': None, 'summary': None}
+2026-04-30 16:59:12 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-30 16:59:12 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 16:59:12 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'collision', 'estimated_cost': 50000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 16:59:12 | INFO     | main | Pipeline completed in 3.297s. Output: {'loss_type': 'collision', 'estimated_cost': 50000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:35 | DEBUG    | python_multipart.multipart | Calling on_part_begin with no data
+2026-04-30 17:03:35 | DEBUG    | python_multipart.multipart | Calling on_header_field with data[42:61]
+2026-04-30 17:03:35 | DEBUG    | python_multipart.multipart | Calling on_header_value with data[63:108]
+2026-04-30 17:03:35 | DEBUG    | python_multipart.multipart | Calling on_header_end with no data
+2026-04-30 17:03:35 | DEBUG    | python_multipart.multipart | Calling on_header_field with data[110:122]
+2026-04-30 17:03:35 | DEBUG    | python_multipart.multipart | Calling on_header_value with data[124:134]
+2026-04-30 17:03:35 | DEBUG    | python_multipart.multipart | Calling on_header_end with no data
+2026-04-30 17:03:35 | DEBUG    | python_multipart.multipart | Calling on_headers_finished with no data
+2026-04-30 17:03:35 | DEBUG    | python_multipart.multipart | Calling on_part_data with data[138:858]
+2026-04-30 17:03:35 | DEBUG    | python_multipart.multipart | Calling on_part_end with no data
+2026-04-30 17:03:35 | DEBUG    | python_multipart.multipart | Calling on_end with no data
+2026-04-30 17:03:35 | INFO     | api.app | POST /process_batch — 10 claims
+2026-04-30 17:03:35 | INFO     | main | Pipeline started for input: 'car hit from behind, bumper broken, repair maybe 30k, happened last night'
+2026-04-30 17:03:35 | DEBUG    | pipeline.preprocess | Preprocessed: 'car hit from behind, bumper broken, repair maybe 30k, happened last night' → 'car hit from behind, bumper broken, repair maybe 30000, happened last night'
+2026-04-30 17:03:35 | DEBUG    | pipeline.rules | Rule matched loss_type='collision'
+2026-04-30 17:03:35 | DEBUG    | pipeline.rules | Rule extracted cost=30000.0
+2026-04-30 17:03:35 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': None, 'summary': None}
+2026-04-30 17:03:38 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 17:03:38 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 17:03:38 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 17:03:38 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B0710C690>
+2026-04-30 17:03:38 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025B070B1B50> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 17:03:39 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B0701AC40>
+2026-04-30 17:03:39 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:39 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 17:03:39 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 17:03:39 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 17:03:39 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:39 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Thu, 30 Apr 2026 11:33:40 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=120'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 17:03:39 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 17:03:39 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 17:03:39 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 17:03:39 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 17:03:39 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 17:03:39 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 19.549457762s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '19s'}]}}
+2026-04-30 17:03:39 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 17:03:39 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-30 17:03:39 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-30 17:03:39 | INFO     | pipeline.combine | Combined result: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': None, 'summary': None}
+2026-04-30 17:03:39 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-30 17:03:39 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 17:03:39 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:39 | INFO     | main | Pipeline completed in 4.249s. Output: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:39 | INFO     | main | Pipeline started for input: 'bike stolen from parking lot yesterday evening, no witnesses'
+2026-04-30 17:03:39 | DEBUG    | pipeline.preprocess | Preprocessed: 'bike stolen from parking lot yesterday evening, no witnesses' → 'bike stolen from parking lot yesterday evening, no witnesses'
+2026-04-30 17:03:39 | DEBUG    | pipeline.rules | Rule matched loss_type='theft'
+2026-04-30 17:03:39 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'theft', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-30 17:03:41 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 17:03:41 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 17:03:41 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 17:03:41 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B0701B6F0>
+2026-04-30 17:03:41 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025B070B1EB0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 17:03:42 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B070E5EB0>
+2026-04-30 17:03:42 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:42 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 17:03:42 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 17:03:42 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 17:03:42 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:42 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Thu, 30 Apr 2026 11:33:43 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=145'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 17:03:42 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 17:03:42 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 17:03:42 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 17:03:42 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 17:03:42 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 17:03:42 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 16.952206081s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '16s'}]}}
+2026-04-30 17:03:42 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 17:03:42 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-30 17:03:42 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-30 17:03:42 | INFO     | pipeline.combine | Combined result: {'loss_type': 'theft', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-30 17:03:42 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-30 17:03:42 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 17:03:42 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'theft', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:42 | INFO     | main | Pipeline completed in 2.576s. Output: {'loss_type': 'theft', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:42 | INFO     | main | Pipeline started for input: 'engine seized on highway, towed to workshop, total repair cost around 85000'
+2026-04-30 17:03:42 | DEBUG    | pipeline.preprocess | Preprocessed: 'engine seized on highway, towed to workshop, total repair cost around 85000' → 'engine seized on highway, towed to workshop, total repair cost around 85000'
+2026-04-30 17:03:42 | DEBUG    | pipeline.rules | Rule matched loss_type='mechanical'
+2026-04-30 17:03:42 | DEBUG    | pipeline.rules | Rule extracted cost=85000.0
+2026-04-30 17:03:42 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': None, 'summary': None}
+2026-04-30 17:03:44 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 17:03:44 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 17:03:44 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 17:03:44 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B07124D10>
+2026-04-30 17:03:44 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025B070B20F0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 17:03:44 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B07124E20>
+2026-04-30 17:03:44 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:44 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 17:03:44 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 17:03:44 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 17:03:44 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:44 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Thu, 30 Apr 2026 11:33:45 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=115'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 17:03:44 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 17:03:44 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 17:03:44 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 17:03:44 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 17:03:44 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 17:03:44 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 14.407753531s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '14s'}]}}
+2026-04-30 17:03:44 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 17:03:44 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-30 17:03:44 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-30 17:03:44 | INFO     | pipeline.combine | Combined result: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': None, 'summary': None}
+2026-04-30 17:03:44 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-30 17:03:44 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 17:03:44 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:44 | INFO     | main | Pipeline completed in 2.541s. Output: {'loss_type': 'mechanical', 'estimated_cost': 85000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:44 | INFO     | main | Pipeline started for input: 'flood damaged car, water entered cabin, seats destroyed, insurance claim needed'
+2026-04-30 17:03:44 | DEBUG    | pipeline.preprocess | Preprocessed: 'flood damaged car, water entered cabin, seats destroyed, insurance claim needed' → 'flood damaged car, water entered cabin, seats destroyed, insurance claim needed'
+2026-04-30 17:03:44 | DEBUG    | pipeline.rules | Rule matched loss_type='flood'
+2026-04-30 17:03:44 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'flood', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-30 17:03:47 | DEBUG    | httpcore.connection | close.started
+2026-04-30 17:03:47 | DEBUG    | httpcore.connection | close.complete
+2026-04-30 17:03:47 | DEBUG    | httpcore.connection | close.started
+2026-04-30 17:03:47 | DEBUG    | httpcore.connection | close.complete
+2026-04-30 17:03:47 | DEBUG    | httpcore.connection | close.started
+2026-04-30 17:03:47 | DEBUG    | httpcore.connection | close.complete
+2026-04-30 17:03:47 | DEBUG    | httpcore.connection | close.started
+2026-04-30 17:03:47 | DEBUG    | httpcore.connection | close.complete
+2026-04-30 17:03:47 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 17:03:47 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 17:03:47 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 17:03:47 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B07027D50>
+2026-04-30 17:03:47 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025B070B2330> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 17:03:47 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B07027250>
+2026-04-30 17:03:47 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:47 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 17:03:47 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 17:03:47 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 17:03:47 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:47 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Thu, 30 Apr 2026 11:33:48 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=127'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 17:03:47 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 17:03:47 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 17:03:47 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 17:03:47 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 17:03:47 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 17:03:47 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 11.873040625s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '11s'}]}}
+2026-04-30 17:03:47 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 17:03:47 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-30 17:03:47 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-30 17:03:47 | INFO     | pipeline.combine | Combined result: {'loss_type': 'flood', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-30 17:03:47 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-30 17:03:47 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 17:03:47 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'flood', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:47 | INFO     | main | Pipeline completed in 2.586s. Output: {'loss_type': 'flood', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:47 | INFO     | main | Pipeline started for input: 'minor dent on front door, just cosmetic, maybe 3000 to fix'
+2026-04-30 17:03:47 | DEBUG    | pipeline.preprocess | Preprocessed: 'minor dent on front door, just cosmetic, maybe 3000 to fix' → 'minor dent on front door, just cosmetic, maybe 3000 to fix'
+2026-04-30 17:03:47 | DEBUG    | pipeline.rules | Rule extracted cost=3000.0
+2026-04-30 17:03:47 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': None, 'estimated_cost': 3000.0, 'severity': 'low', 'summary': None}
+2026-04-30 17:03:49 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 17:03:49 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 17:03:49 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 17:03:49 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B06FEB5C0>
+2026-04-30 17:03:49 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025B070B2210> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 17:03:49 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B06FEBB60>
+2026-04-30 17:03:49 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:49 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 17:03:49 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 17:03:49 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 17:03:49 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:49 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Thu, 30 Apr 2026 11:33:50 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=291'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 17:03:49 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 17:03:49 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 17:03:49 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 17:03:49 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 17:03:49 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 17:03:49 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 9.328951339s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '9s'}]}}
+2026-04-30 17:03:49 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: llm
+2026-04-30 17:03:49 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-30 17:03:49 | DEBUG    | pipeline.combine | Field 'severity' sourced from: rules
+2026-04-30 17:03:49 | INFO     | pipeline.combine | Combined result: {'loss_type': None, 'estimated_cost': 3000.0, 'severity': 'low', 'summary': None}
+2026-04-30 17:03:49 | WARNING  | pipeline.validate | Invalid loss_type '' → defaulting to 'unknown'
+2026-04-30 17:03:49 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 17:03:49 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'unknown', 'estimated_cost': 3000.0, 'severity': 'low', 'summary': 'No summary available.'}
+2026-04-30 17:03:49 | INFO     | main | Pipeline completed in 2.486s. Output: {'loss_type': 'unknown', 'estimated_cost': 3000.0, 'severity': 'low', 'summary': 'No summary available.'}
+2026-04-30 17:03:49 | INFO     | main | Pipeline started for input: 'house fire started in kitchen, spread to two rooms, total loss estimated 5L'
+2026-04-30 17:03:49 | DEBUG    | pipeline.preprocess | Preprocessed: 'house fire started in kitchen, spread to two rooms, total loss estimated 5L' → 'house fire started in kitchen, spread to two rooms, total loss estimated 500000'
+2026-04-30 17:03:49 | DEBUG    | pipeline.rules | Rule matched loss_type='fire'
+2026-04-30 17:03:49 | DEBUG    | pipeline.rules | Rule extracted cost=500000.0
+2026-04-30 17:03:49 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'fire', 'estimated_cost': 500000.0, 'severity': 'high', 'summary': None}
+2026-04-30 17:03:52 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 17:03:52 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 17:03:52 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 17:03:52 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B070EFCB0>
+2026-04-30 17:03:52 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025B070B1D00> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 17:03:52 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B070EFE70>
+2026-04-30 17:03:52 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:52 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 17:03:52 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 17:03:52 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 17:03:52 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:52 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Thu, 30 Apr 2026 11:33:53 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=139'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 17:03:52 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 17:03:52 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 17:03:52 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 17:03:52 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 17:03:52 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 17:03:52 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 6.276712018s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}
+2026-04-30 17:03:52 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 17:03:52 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-30 17:03:52 | DEBUG    | pipeline.combine | Field 'severity' sourced from: rules
+2026-04-30 17:03:52 | INFO     | pipeline.combine | Combined result: {'loss_type': 'fire', 'estimated_cost': 500000.0, 'severity': 'high', 'summary': None}
+2026-04-30 17:03:52 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 17:03:52 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'fire', 'estimated_cost': 500000.0, 'severity': 'high', 'summary': 'No summary available.'}
+2026-04-30 17:03:52 | INFO     | main | Pipeline completed in 3.049s. Output: {'loss_type': 'fire', 'estimated_cost': 500000.0, 'severity': 'high', 'summary': 'No summary available.'}
+2026-04-30 17:03:52 | INFO     | main | Pipeline started for input: 'someone vandalized my car, keyed the hood, broken side mirror'
+2026-04-30 17:03:52 | DEBUG    | pipeline.preprocess | Preprocessed: 'someone vandalized my car, keyed the hood, broken side mirror' → 'someone vandalized my car, keyed the hood, broken side mirror'
+2026-04-30 17:03:52 | DEBUG    | pipeline.rules | Rule matched loss_type='vandalism'
+2026-04-30 17:03:52 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'vandalism', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-30 17:03:55 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 17:03:55 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 17:03:55 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 17:03:55 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B070BB930>
+2026-04-30 17:03:55 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025B070B1E20> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 17:03:55 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B07135610>
+2026-04-30 17:03:55 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:55 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 17:03:55 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 17:03:55 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 17:03:55 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:55 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Thu, 30 Apr 2026 11:33:56 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=156'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 17:03:55 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 17:03:55 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 17:03:55 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 17:03:55 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 17:03:55 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 17:03:55 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 3.424274144s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '3s'}]}}
+2026-04-30 17:03:55 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 17:03:55 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-30 17:03:55 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-30 17:03:55 | INFO     | pipeline.combine | Combined result: {'loss_type': 'vandalism', 'estimated_cost': None, 'severity': None, 'summary': None}
+2026-04-30 17:03:55 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-30 17:03:55 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 17:03:55 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'vandalism', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:55 | INFO     | main | Pipeline completed in 2.855s. Output: {'loss_type': 'vandalism', 'estimated_cost': None, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:55 | INFO     | main | Pipeline started for input: 'hail storm damaged the roof and windshield, repair quote 25000'
+2026-04-30 17:03:55 | DEBUG    | pipeline.preprocess | Preprocessed: 'hail storm damaged the roof and windshield, repair quote 25000' → 'hail storm damaged the roof and windshield, repair quote 25000'
+2026-04-30 17:03:55 | DEBUG    | pipeline.rules | Rule matched loss_type='natural'
+2026-04-30 17:03:55 | DEBUG    | pipeline.rules | Rule extracted cost=25000.0
+2026-04-30 17:03:55 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'natural', 'estimated_cost': 25000.0, 'severity': None, 'summary': None}
+2026-04-30 17:03:58 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 17:03:58 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 17:03:58 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 17:03:58 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B07135F10>
+2026-04-30 17:03:58 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025B070B28D0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 17:03:58 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B07105910>
+2026-04-30 17:03:58 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:58 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 17:03:58 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 17:03:58 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 17:03:58 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 17:03:59 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Thu, 30 Apr 2026 11:33:59 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=105'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 17:03:59 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 17:03:59 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 17:03:59 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 17:03:59 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 17:03:59 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 17:03:59 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 94.456376ms.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '0s'}]}}
+2026-04-30 17:03:59 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 17:03:59 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-30 17:03:59 | DEBUG    | pipeline.combine | Field 'severity' sourced from: llm
+2026-04-30 17:03:59 | INFO     | pipeline.combine | Combined result: {'loss_type': 'natural', 'estimated_cost': 25000.0, 'severity': None, 'summary': None}
+2026-04-30 17:03:59 | WARNING  | pipeline.validate | Invalid severity '' → defaulting to 'medium'
+2026-04-30 17:03:59 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 17:03:59 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'natural', 'estimated_cost': 25000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:59 | INFO     | main | Pipeline completed in 3.332s. Output: {'loss_type': 'natural', 'estimated_cost': 25000.0, 'severity': 'medium', 'summary': 'No summary available.'}
+2026-04-30 17:03:59 | INFO     | main | Pipeline started for input: 'vehicle collided with another car at signal, both airbags deployed, major structural damage'
+2026-04-30 17:03:59 | DEBUG    | pipeline.preprocess | Preprocessed: 'vehicle collided with another car at signal, both airbags deployed, major structural damage' → 'vehicle collided with another car at signal, both airbags deployed, major structural damage'
+2026-04-30 17:03:59 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': None, 'estimated_cost': None, 'severity': 'high', 'summary': None}
+2026-04-30 17:04:01 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 17:04:01 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 17:04:01 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 17:04:01 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B07105E90>
+2026-04-30 17:04:01 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025B070B2C30> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 17:04:02 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B0712D590>
+2026-04-30 17:04:02 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 17:04:02 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 17:04:02 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 17:04:02 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 17:04:02 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 17:04:02 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Thu, 30 Apr 2026 11:34:03 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=164'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 17:04:02 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 17:04:02 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 17:04:02 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 17:04:02 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 17:04:02 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 17:04:02 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 56.365249186s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}
+2026-04-30 17:04:02 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: llm
+2026-04-30 17:04:02 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: llm
+2026-04-30 17:04:02 | DEBUG    | pipeline.combine | Field 'severity' sourced from: rules
+2026-04-30 17:04:02 | INFO     | pipeline.combine | Combined result: {'loss_type': None, 'estimated_cost': None, 'severity': 'high', 'summary': None}
+2026-04-30 17:04:02 | WARNING  | pipeline.validate | Invalid loss_type '' → defaulting to 'unknown'
+2026-04-30 17:04:02 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 17:04:02 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'unknown', 'estimated_cost': None, 'severity': 'high', 'summary': 'No summary available.'}
+2026-04-30 17:04:02 | INFO     | main | Pipeline completed in 3.727s. Output: {'loss_type': 'unknown', 'estimated_cost': None, 'severity': 'high', 'summary': 'No summary available.'}
+2026-04-30 17:04:02 | INFO     | main | Pipeline started for input: 'small scratch on bumper from tight parking, 1500 to touch up paint'
+2026-04-30 17:04:02 | DEBUG    | pipeline.preprocess | Preprocessed: 'small scratch on bumper from tight parking, 1500 to touch up paint' → 'small scratch on bumper from tight parking, 1500 to touch up paint'
+2026-04-30 17:04:02 | DEBUG    | pipeline.rules | Rule matched loss_type='collision'
+2026-04-30 17:04:02 | DEBUG    | pipeline.rules | Rule extracted cost=1500.0
+2026-04-30 17:04:02 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'collision', 'estimated_cost': 1500.0, 'severity': 'low', 'summary': None}
+2026-04-30 17:04:05 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-04-30 17:04:05 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-30 17:04:05 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-30 17:04:05 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B0712DA90>
+2026-04-30 17:04:05 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025B070B2F90> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-30 17:04:05 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025B070B31D0>
+2026-04-30 17:04:05 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-30 17:04:05 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-04-30 17:04:05 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-30 17:04:05 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-04-30 17:04:05 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-30 17:04:05 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Thu, 30 Apr 2026 11:34:06 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=201'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-30 17:04:05 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-04-30 17:04:05 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-30 17:04:05 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-04-30 17:04:05 | DEBUG    | httpcore.http11 | response_closed.started
+2026-04-30 17:04:05 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-04-30 17:04:05 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 53.706577228s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '53s'}]}}
+2026-04-30 17:04:05 | DEBUG    | pipeline.combine | Field 'loss_type' sourced from: rules
+2026-04-30 17:04:05 | DEBUG    | pipeline.combine | Field 'estimated_cost' sourced from: rules
+2026-04-30 17:04:05 | DEBUG    | pipeline.combine | Field 'severity' sourced from: rules
+2026-04-30 17:04:05 | INFO     | pipeline.combine | Combined result: {'loss_type': 'collision', 'estimated_cost': 1500.0, 'severity': 'low', 'summary': None}
+2026-04-30 17:04:05 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-04-30 17:04:05 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'collision', 'estimated_cost': 1500.0, 'severity': 'low', 'summary': 'No summary available.'}
+2026-04-30 17:04:05 | INFO     | main | Pipeline completed in 2.69s. Output: {'loss_type': 'collision', 'estimated_cost': 1500.0, 'severity': 'low', 'summary': 'No summary available.'}
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.started
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.complete
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.started
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.complete
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.started
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.complete
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.started
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.complete
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.started
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.complete
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.started
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.complete
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.started
+2026-05-03 22:51:07 | DEBUG    | httpcore.connection | close.complete
+2026-05-03 22:58:59 | INFO     | api.app | POST /process_claim — 'car accident on highway, bumper broken, repair 30k'
+2026-05-03 22:58:59 | INFO     | main | Pipeline started for input: 'car accident on highway, bumper broken, repair 30k'
+2026-05-03 22:58:59 | DEBUG    | pipeline.preprocess | Preprocessed: 'car accident on highway, bumper broken, repair 30k' → 'car accident on highway, bumper broken, repair 30000'
+2026-05-03 22:58:59 | DEBUG    | pipeline.rules | Rule matched loss_type='collision'
+2026-05-03 22:58:59 | DEBUG    | pipeline.rules | Rule extracted cost=30000.0
+2026-05-03 22:58:59 | INFO     | pipeline.rules | Rule-based extraction result: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': 'low', 'summary': None}
+2026-05-03 22:59:00 | INFO     | pipeline.llm | Calling Gemini API for LLM extraction...
+2026-05-03 22:59:00 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-03 22:59:00 | DEBUG    | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-05-03 22:59:01 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000024FA90897F0>
+2026-05-03 22:59:01 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000024FA8D39D90> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-05-03 22:59:01 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000024FA908C190>
+2026-05-03 22:59:01 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-05-03 22:59:01 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-05-03 22:59:01 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-05-03 22:59:01 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-05-03 22:59:01 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-05-03 22:59:01 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 03 May 2026 17:29:01 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=193'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-05-03 22:59:01 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-05-03 22:59:01 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-05-03 22:59:01 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-05-03 22:59:01 | DEBUG    | httpcore.http11 | response_closed.started
+2026-05-03 22:59:01 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-05-03 22:59:01 | ERROR    | pipeline.llm | Unexpected error in LLM extraction: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 58.104666932s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}}
+2026-05-03 22:59:01 | DEBUG    | pipeline.combine | Field 'loss_type': source=rules, confidence=0.9
+2026-05-03 22:59:01 | DEBUG    | pipeline.combine | Field 'estimated_cost': source=rules, confidence=0.9
+2026-05-03 22:59:01 | DEBUG    | pipeline.combine | Field 'severity': source=rules, confidence=0.9
+2026-05-03 22:59:01 | INFO     | pipeline.combine | Combined result: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': 'low', 'summary': None, 'metadata': {'loss_type': {'source': 'rules', 'confidence': 0.9}, 'estimated_cost': {'source': 'rules', 'confidence': 0.9}, 'severity': {'source': 'rules', 'confidence': 0.9}, 'summary': {'source': 'llm', 'confidence': 0.85}}}
+2026-05-03 22:59:01 | WARNING  | pipeline.validate | Missing or empty summary → using default.
+2026-05-03 22:59:01 | INFO     | pipeline.validate | Validation complete: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': 'low', 'summary': 'No summary available.', 'metadata': {'loss_type': {'source': 'rules', 'confidence': 0.9}, 'estimated_cost': {'source': 'rules', 'confidence': 0.9}, 'severity': {'source': 'rules', 'confidence': 0.9}, 'summary': {'source': 'llm', 'confidence': 0.85}}}
+2026-05-03 22:59:01 | INFO     | main | Pipeline completed in 2.221s. Output: {'loss_type': 'collision', 'estimated_cost': 30000.0, 'severity': 'low', 'summary': 'No summary available.', 'metadata': {'loss_type': {'source': 'rules', 'confidence': 0.9}, 'estimated_cost': {'source': 'rules', 'confidence': 0.9}, 'severity': {'source': 'rules', 'confidence': 0.9}, 'summary': {'source': 'llm', 'confidence': 0.85}}}

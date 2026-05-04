@@ -1,0 +1,56 @@
+[
+  {
+    "input": "car hit from behind, bumper broken, repair maybe 30k, happened last night",
+    "output": {
+      "loss_type": "collision",
+      "estimated_cost": 30000.0,
+      "severity": "medium",
+      "summary": "No summary available."
+    }
+  },
+  {
+    "input": "bike stolen from parking lot yesterday evening",
+    "output": {
+      "loss_type": "theft",
+      "estimated_cost": null,
+      "severity": "medium",
+      "summary": "No summary available."
+    }
+  },
+  {
+    "input": "engine seized on highway, towed to workshop, total repair cost around 85000",
+    "output": {
+      "loss_type": "mechanical",
+      "estimated_cost": 85000.0,
+      "severity": "medium",
+      "summary": "No summary available."
+    }
+  },
+  {
+    "input": "flood damaged car, water entered cabin, seats destroyed",
+    "output": {
+      "loss_type": "flood",
+      "estimated_cost": null,
+      "severity": "medium",
+      "summary": "No summary available."
+    }
+  },
+  {
+    "input": "minor dent on front door, just cosmetic, maybe 3000 to fix",
+    "output": {
+      "loss_type": "unknown",
+      "estimated_cost": 3000.0,
+      "severity": "low",
+      "summary": "No summary available."
+    }
+  },
+  {
+    "input": "house fire started in kitchen, spread to two rooms, total loss",
+    "output": {
+      "loss_type": "fire",
+      "estimated_cost": null,
+      "severity": "high",
+      "summary": "No summary available."
+    }
+  }
+]
